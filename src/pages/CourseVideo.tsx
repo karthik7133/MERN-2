@@ -25,7 +25,7 @@ const CourseVideo = () => {
       const token = localStorage.getItem('token');
 
       await axios.patch(
-        `http://localhost:5000/api/courses/${courseId}/progress`,
+        `https://mern-2-backend.onrender.com/api/courses/${courseId}/progress`,
         { progress },
         {
           headers: {
@@ -36,7 +36,7 @@ const CourseVideo = () => {
 
       if (progress === 100) {
         await axios.post(
-          `http://localhost:5000/api/student/${courseId}/grades`,
+          `https://mern-2-backend.onrender.com/api/student/${courseId}/grades`,
           {
             courseId,
             assignmentName: 'Auto Test',
@@ -48,7 +48,7 @@ const CourseVideo = () => {
         );
 
         await axios.post(
-          `http://localhost:5000/api/student/${courseId}/attendance`,
+          `https://mern-2-backend.onrender.com/api/student/${courseId}/attendance`,
           {
             courseId,
             date: new Date(),
@@ -64,7 +64,7 @@ const CourseVideo = () => {
   useEffect(() => {
     const fetchCourse = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/courses/${courseId}`);
+        const res = await axios.get(`https://mern-2-backend.onrender.com/api/courses/${courseId}`);
         setCourse(res.data);
         console.log("📹 Received videoUrl:", res.data.videoUrl); // ✅ Log here
       } catch (err) {
