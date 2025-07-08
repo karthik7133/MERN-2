@@ -43,7 +43,7 @@ const BookingDetails = () => {
 
   const fetchCourse = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/courses/${courseId}`);
+      const response = await axios.get(`https://mern-2-backend.onrender.com/api/courses/${courseId}`);
       setCourse(response.data);
     } catch (error) {
       console.error('Error fetching course:', error);
@@ -71,7 +71,7 @@ const BookingDetails = () => {
       }
   
       const response = await axios.post(
-        `http://localhost:5000/api/courses/${courseId}/register`,
+        `https://mern-2-backend.onrender.com/api/courses/${courseId}/register`,
         {},
         {
           headers: {
