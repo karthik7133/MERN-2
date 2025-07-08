@@ -76,7 +76,7 @@ const Dashboard = () => {
 
   const fetchDashboardData = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/student/dashboard');
+      const response = await axios.get('https://mern-2-backend.onrender.com/api/student/dashboard');
       setDashboardData(response.data);
     } catch (error) {
       console.error('Error fetching dashboard data:', error);
@@ -87,7 +87,7 @@ const Dashboard = () => {
 
   const fetchAnnouncements = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/student/announcements');
+      const response = await axios.get('https://mern-2-backend.onrender.com/api/student/announcements');
       setAnnouncements(response.data);
     } catch (error) {
       console.error('Error fetching announcements:', error);
